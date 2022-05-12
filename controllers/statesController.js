@@ -15,7 +15,9 @@ const getAllStatesData = async (req, res) => {
                 //Check if state has funfacts
                 if (statesList[index].code != 'AK' && statesList[index].code != 'HI') {
                     if (stateDocument.length > 0) {
-                        statesList.funfacts = stateDocument[0].funfacts;
+                        if (stateDocument[0].funfacts.length > 0) {
+                            statesList.funfacts = stateDocument[0].funfacts;
+                        }
                     }
                     contigs.push(statesList[index]);
                 }

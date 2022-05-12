@@ -365,3 +365,13 @@
 20220512	11:32:00 	 ac60fb27-2ab4-4806-847e-fcb48ae96c4d 	 GET 	 undefined 	/states/ks/funfact
 20220512	11:32:04 	 0dda00ee-b151-4157-bca9-7a8010d47565 	 GET 	 undefined 	/states/ks/ne
 20220512	11:32:11 	 bd5cc846-422b-43c3-9e76-2c9a7862376e 	 GET 	 undefined 	/states/ne/funfact
+20220512	11:34:23 	 9d53915c-e797-49f8-a44f-503dbd8b4193 	 GET 	 undefined 	/states/ne
+20220512	11:34:29 	 5a61dff0-230f-4942-b8a5-fb016edbc9cb 	 GET 	 undefined 	/states/ks
+20220512	11:34:33 	 28141bb8-c882-4d19-9f3d-6bc9399a17cf 	 GET 	 undefined 	/states/co
+20220512	11:34:37 	 0b871654-aa19-47ab-a957-114accc571a5 	 GET 	 undefined 	/states/ok
+20220512	11:34:55 	 54a1b3e9-7747-401f-99ef-9805f1566cd6 	 DELETE 	 undefined 	/states/ok/funfact
+20220512	11:34:56 	 8a7b9a69-7dc3-4f0e-aaf8-c31283b1ab25 	 DELETE 	 undefined 	/states/ok/funfact
+20220512	11:34:57 	 7c4b5003-c908-496e-b2e5-6ff7f760a8d4 	 DELETE 	 undefined 	/states/ok/funfact
+20220512	11:35:05 	 f36910a5-87f2-44d1-b4fb-4a53e5d17ce5 	 GET 	 undefined 	/states/ok/funfact
+20220512	11:35:08 	 1879c771-d6b2-4391-9ec0-fded68eae06e 	 GET 	 undefined 	/states/ok/
+20220512	11:35:13 	 45e34b95-25e9-48ca-82d7-76be2f76fbb7 	 GET 	 undefined 	/states
