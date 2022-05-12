@@ -79,7 +79,6 @@ const getSpecificStateData = async (req, res) => {
     }    
 )};
 
-
 const getStateFunFact = async (req,res) => {
     if (!req?.params?.id) {
         return res.status(400).json({ message: "State abreviation is required. " });
@@ -87,34 +86,36 @@ const getStateFunFact = async (req,res) => {
     const code = (req.params.id).toUpperCase();
     const stateDocument = await State.find( {"code": code} );
         if (stateDocument.length > 0) {
-            randomIndex = Math.floor(Math.random() * stateDocument[0].funfacts.length);
-            return res.json( { "funfact": stateDocument[0].funfacts[randomIndex] } );
-        } else {
-            fs.readFile('./model/states.json', (err, data) => {
-                if (err) throw err;
-                var statesList = JSON.parse(data);
-                const check = (check) => check == code;
-                var stateName = '';
-                const codes = [];
-                for (var index in statesList) {
-                    if (statesList.hasOwnProperty(index)) {
-                        codes.push(statesList[index].code);
-                    }
+            if (stateDocument[0].funfacts.length > 0) {
+                randomIndex = Math.floor(Math.random() * stateDocument[0].funfacts.length);
+                return res.json( { "funfact": stateDocument[0].funfacts[randomIndex] } );
+            }
+        }
+        fs.readFile('./model/states.json', (err, data) => {
+            if (err) throw err;
+            var statesList = JSON.parse(data);
+            const check = (check) => check == code;
+            var stateName = '';
+            const codes = [];
+            for (var index in statesList) {
+                if (statesList.hasOwnProperty(index)) {
+                    codes.push(statesList[index].code);
                 }
-                if (codes.findIndex(check) > -1) {
-                    stateName = statesList[codes.findIndex(check)].state;
-                }
-                if (stateName == '') {
-                    return res
-                        .status(404)
-                        .json({ message: 'Invalid state abreviation.'})
-                }
+            }
+            if (codes.findIndex(check) > -1) {
+                stateName = statesList[codes.findIndex(check)].state;
+            }
+            if (stateName == '') {
                 return res
                     .status(404)
-                    .json({ message: `No fun facts found for ${stateName}.` });
-              });
-        }
+                    .json({ message: 'Invalid state abreviation.'})
+            }
+            return res
+                .status(404)
+                .json({ message: `No fun facts found for ${stateName}.` });
+          });
 }
+
 
 const getStateCapital = async (req, res) => {
     const code = (req.params.id).toUpperCase();
